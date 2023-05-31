@@ -3,28 +3,53 @@
 
 <script>
 import { store } from '../store'
-
+import PageMainSecond from './PageMainSecond.vue'
 
 export default {
+    components: {
+        PageMainSecond
+    },
     data() {
         return {
             store
+
         }
+    },
+    methods: {
+        prevImage() {
+            this.store.currentCards--
+            // if (this.store.currentCards < 0)
+            //     this.store.currentCards = 4
+            console.log(this.store.cards[this.store.currentCards].path);
+        },
+        nextImage() {
+            this.store.currentCards++
+            // if (this.store.currentCards > 4)
+            //     this.store.currentCards = 0
+            console.log(this.store.cards[this.store.currentCards].path);
+
+        }
+
     },
     mounted() {
         console.log(this.store.cards)
     }
 }
 </script>
+
+
+
 <template>
     <main>
 
-        <!-- prima section main -->
+        <!-- first section main -->
         <section class="bg_gray">
+            <button @click="prevImage()">indietro</button>
+            <button @click="nextImage()">avanti</button>
             <div class="first_slider d-flex">
                 <div v-for="card in store.cards" class="carde">
                     <small class="name">{{ card.name }}</small>
-                    <img :src="card.path" alt="">
+                    <img :src="this.store.cards[this.store.currentCards].path" alt="">
                     <div class="card_paragraph">
                         <strong>
                             <p class="mt-1 mb-0">{{ card.titol }}</p>
@@ -138,10 +163,103 @@ export default {
                 </div>
             </div>
         </section>
+
+        <!-- main third section -->
+        <section>
+            <!-- titol with button -->
+            <div class="third_section_titole d-flex justify-content-between boxed aline-items-center">
+                <h6>LIFESTYLE & STORIES</h6>
+                <div class="third_section_button">
+                    <button class="me-3">All</button>
+                    <button class="me-3">LIFESTYLE</button>
+                    <button>STORIES</button>
+                </div>
+            </div>
+
+            <!-- images left -->
+            <div class="third_section_images boxed d-flex mt-3 justify-content-between mb-4">
+                <div class="third_section_left">
+                    <div class="square left_square_third ">
+                        <small class="badge_third me-2">Culture</small>
+                        <img src="public/img/success-story.webp" alt="">
+                        <div class="card_info_third">
+                            <small>
+                                <span class="mb-1 me-3 mb-0 text-light"><i class="fa-solid fa-user"
+                                        style="color: #ffffff;"></i>
+                                    demo</span>
+                                <span class="mb-1 text-light mb-0"><i class="fa-solid fa-calendar-days"></i> december 25,
+                                    2022</span>
+                            </small>
+                            <strong>
+                                <p class="mt-1 mb-0 text-light mt-0 mb-2">Fashion Trend Now A Days</p>
+                            </strong>
+                        </div>
+                    </div>
+                </div>
+                <!-- right -->
+                <div class="third_section_right">
+                    <div class="third_right_card border_third d-flex align-items-center">
+                        <div class="square">
+                            <img src="public/img/travel-alone-300x200.webp" alt="">
+                            <small class="badge_third me-2">Stories</small>
+                        </div>
+                        <div class="third_right_card_description">
+                            <small>
+                                <span class="mb-1 me-3 mb-0"><i class="fa-solid fa-user"></i>
+                                    demo</span>
+                                <span class="mb-1 mb-0"><i class="fa-solid fa-calendar-days"></i>
+                                    december 25, 2022</span>
+                            </small>
+                            <strong>
+                                <p class="mt-1 mb-0 mt-0 mb-2">Fashion Trend Now A Days</p>
+                            </strong>
+                        </div>
+                    </div>
+                    <div class="third_right_card border_third mt-3 d-flex align-items-center">
+                        <div class="square">
+                            <img src="public/img/best-places-300x200.webp" alt="">
+                            <small class="badge_third me-2">Lifestyle</small>
+                        </div>
+                        <div class="third_right_card_description">
+                            <small>
+                                <span class="mb-1 me-3 mb-0"><i class="fa-solid fa-user"></i>
+                                    demo</span>
+                                <span class="mb-1 mb-0"><i class="fa-solid fa-calendar-days"></i>
+                                    december 25, 2022</span>
+                            </small>
+                            <strong>
+                                <p class="mt-1 mb-0 mt-0 mb-2">Fashion Trend Now A Days</p>
+                            </strong>
+                        </div>
+                    </div>
+                    <div class="third_right_card mt-3 d-flex align-items-center">
+                        <div class="square">
+                            <img src="public/img/music-love.webp" alt="">
+                            <small class="badge_third me-2">Culture</small>
+                        </div>
+                        <div class="third_right_card_description">
+                            <small>
+                                <span class="mb-1 me-3 mb-0"><i class="fa-solid fa-user"></i>
+                                    demo</span>
+                                <span class="mb-1 mb-0"><i class="fa-solid fa-calendar-days"></i>
+                                    december 25, 2022</span>
+                            </small>
+                            <strong>
+                                <p class="mt-1 mb-0 mt-0 mb-2">Fashion Trend Now A Days</p>
+                            </strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <PageMainSecond />
     </main>
 </template>
+
+                                     <!-- CSS -->
+
 <style scoped>
-/* prima section main */
+/* first section main */
 
 .first_slider {
     overflow-x: hidden;
@@ -155,6 +273,7 @@ export default {
 .carde {
     width: calc(100% / 4 - 20px);
     position: relative;
+    margin: 10px;
 }
 
 .carde img {
@@ -163,6 +282,7 @@ export default {
 
 .card_paragraph {
     text-align: center;
+    background-color: white;
 }
 
 .name {
@@ -202,7 +322,7 @@ export default {
 }
 
 .card_square {
-    padding: 30px;
+    padding: 30px 0px;
     justify-content: space-between;
     height: 440px;
 }
@@ -234,11 +354,6 @@ export default {
 
 }
 
-.contenitore {
-    padding: 10px;
-    justify-content: space-between;
-}
-
 .right_box {
     width: 26%;
     margin-right: 5px;
@@ -265,5 +380,84 @@ export default {
 .left_square {
     height: 186px;
     width: 100%;
+}
+
+/* main third section */
+
+.third_section_button button {
+    border: none;
+    padding: 1px 15px;
+    background-color: rgb(92, 92, 92);
+    color: white;
+    font-size: 13px;
+    border-radius: 5px;
+}
+
+/* third section images */
+
+.third_section_images {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
+}
+
+.third_section_left {
+    width: 60%;
+    height: 100%;
+}
+
+.third_section_left img {
+    width: 100%;
+}
+
+.third_section_right {
+    width: 40%;
+    height: 100%;
+}
+
+.left_square_third {
+    height: 315px;
+    width: 100%;
+}
+
+.card_info_third {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin-left: 20px;
+}
+
+.badge_third {
+    color: gray;
+    position: absolute;
+    background-color: white;
+    border-radius: 5px;
+    top: 10px;
+    left: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    z-index: 2;
+    padding: 1px 10px;
+
+}
+
+.third_right_card {
+    padding: 0px 0px 10px 0px;
+    margin-left: 10px;
+}
+
+.border_third {
+    border-bottom: 1px solid gray;
+}
+
+.third_right_card img {
+    width: 125px;
+    border-radius: 5px;
+    position: relative;
+    background-color: black;
+}
+
+.third_right_card_description {
+    margin-left: 10px;
 }
 </style>
