@@ -39,9 +39,10 @@ export default {
 
         <!-- second section main -->
         <section>
-            <div class="card_square boxed">
-                <div class="column_square d-flex flex-column">
-                    <div class="square">
+            <div class="card_square d-flex boxed">
+                <!-- right box -->
+                <div class="right_box">
+                    <div class="square right_square">
                         <small class="badge me-2">fashion</small>
                         <small class="badge_2">lifestyle</small>
                         <img src="public/img/anime-fashion.webp" alt="">
@@ -58,10 +59,69 @@ export default {
                             </strong>
                         </div>
                     </div>
-                    <div class="square mt-2">
+                    <div class="square right_square mt-2">
                         <small class="badge me-2">fashion</small>
                         <small class="badge_2">lifestyle</small>
-                        <img src="public/img/anime-fashion.webp" alt="">
+                        <img src="public/img/travel-alone.webp" alt="">
+                        <div class="card_info">
+                            <small>
+                                <span class="mb-1 text-light me-3 mb-0"><i class="fa-solid fa-user"
+                                        style="color: #ffffff;"></i>
+                                    demo</span>
+                                <span class="mb-1 text-light mb-0"><i class="fa-solid fa-calendar-days"
+                                        style="color: #ffffff;"></i> december 25, 2022</span>
+                            </small>
+                            <strong>
+                                <p class="mt-1 mb-0 text-light mt-0 mb-2">Fashion Trend Now A Days</p>
+                            </strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- central box -->
+                <div class="central_box">
+                    <div class="square central_square">
+                        <small class="badge me-2">fashion</small>
+                        <small class="badge_2">lifestyle</small>
+                        <img src="public/img/best-places.webp" alt="">
+                        <div class="card_info">
+                            <small>
+                                <span class="mb-1 text-light me-3 mb-0"><i class="fa-solid fa-user"
+                                        style="color: #ffffff;"></i>
+                                    demo</span>
+                                <span class="mb-1 text-light mb-0"><i class="fa-solid fa-calendar-days"
+                                        style="color: #ffffff;"></i> december 25, 2022</span>
+                            </small>
+                            <strong>
+                                <p class="mt-1 mb-0 text-light mt-0 mb-2">Fashion Trend Now A Days</p>
+                            </strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- left box -->
+                <div class="left_box">
+                    <div class="square left_square">
+                        <small class="badge me-2">fashion</small>
+                        <small class="badge_2">lifestyle</small>
+                        <img src="public/img/music-love.webp" alt="">
+                        <div class="card_info">
+                            <small>
+                                <span class="mb-1 text-light me-3 mb-0"><i class="fa-solid fa-user"
+                                        style="color: #ffffff;"></i>
+                                    demo</span>
+                                <span class="mb-1 text-light mb-0"><i class="fa-solid fa-calendar-days"
+                                        style="color: #ffffff;"></i> december 25, 2022</span>
+                            </small>
+                            <strong>
+                                <p class="mt-1 mb-0 text-light mt-0 mb-2">Fashion Trend Now A Days</p>
+                            </strong>
+                        </div>
+                    </div>
+                    <div class="square left_square mt-2">
+                        <small class="badge me-2">fashion</small>
+                        <small class="badge_2">lifestyle</small>
+                        <img src="public/img/visit-france.webp" alt="">
                         <div class="card_info">
                             <small>
                                 <span class="mb-1 text-light me-3 mb-0"><i class="fa-solid fa-user"
@@ -98,7 +158,7 @@ export default {
 }
 
 .carde img {
-    width: 100%
+    width: 100%;
 }
 
 .card_paragraph {
@@ -121,15 +181,17 @@ export default {
 /* second section main */
 
 .square {
-    width: calc(100% / 4);
     position: relative;
     background-color: black;
-    height: 156px;
+    border-radius: 5px;
 }
 
 .square img {
     width: 100%;
     opacity: 0.5;
+    height: 100%;
+    border-radius: 5px;
+
 }
 
 .card_info {
@@ -141,6 +203,8 @@ export default {
 
 .card_square {
     padding: 30px;
+    justify-content: space-between;
+    height: 440px;
 }
 
 .badge {
@@ -168,5 +232,38 @@ export default {
     font-weight: 700;
     z-index: 2;
 
+}
+
+.contenitore {
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.right_box {
+    width: 26%;
+    margin-right: 5px;
+}
+
+.right_square {
+    width: 100%;
+    height: 186px;
+}
+
+.central_box {
+    width: 47%;
+}
+
+.central_square {
+    height: 100%;
+}
+
+.left_box {
+    width: 26%;
+    margin-left: 5px;
+}
+
+.left_square {
+    height: 186px;
+    width: 100%;
 }
 </style>
