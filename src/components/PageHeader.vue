@@ -108,6 +108,11 @@ export default {
     background-color: white;
 }
 
+.social_icons i:hover {
+    background-color: rgb(72, 72, 72);
+    cursor: pointer;
+}
+
 /* section centrale header */
 
 .center_navbar {
@@ -140,7 +145,11 @@ export default {
     font-size: 13px;
 }
 
-.menu a:hover {
+.menu .link_navbar:hover a {
+    color: #bf1d2e;
+}
+
+.menu .link_navbar:hover i {
     color: #bf1d2e;
 }
 

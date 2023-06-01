@@ -160,6 +160,10 @@ export default {
     margin-top: 5px
 }
 
+.card_paragraph button:hover {
+    background-color: rgb(72, 72, 72);
+}
+
 .name {
     color: gray;
     position: absolute;
@@ -202,7 +206,7 @@ export default {
 
 .third_section_right {
     width: 30%;
-    height: 105%;
+    height: 107%;
     overflow-y: auto;
 }
 
