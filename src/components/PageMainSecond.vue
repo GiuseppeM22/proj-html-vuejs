@@ -54,12 +54,11 @@ export default {
 
     <!-- this component third section -->
 
-    <section>
+    <section class="mb-4">
         <!-- left -->
         <div class="third_section_images boxed d-flex mt-3 mb-4">
             <div class="third_section_left">
                 <div class="square left_square_third ">
-                    <small class="badge_third me-2">Culture</small>
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/ZOEihZPz3aE"
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -91,6 +90,16 @@ export default {
                         </small>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- this component last sectio -->
+    <section>
+        <div class="last_cards d-flex">
+            <div v-for="card in store.lastCard" class="singol_card square">
+                <img :src="card.path" alt="">
+                <span>{{ card.titol }}</span>
             </div>
         </div>
     </section>
@@ -127,7 +136,7 @@ export default {
 }
 
 .carde {
-    width: calc(100% / 3 - 20px);
+    width: calc(100% / 3);
     position: relative;
     margin: 5px;
 }
@@ -198,7 +207,6 @@ export default {
 }
 
 .left_square_third {
-    height: 315px;
     width: 100%;
 }
 
@@ -283,5 +291,37 @@ export default {
     background-color: #bf1d2e;
     margin: 10px;
     font-size: 11px;
+}
+
+/* this component last section */
+
+.last_cards {
+    margin-top: 50px;
+}
+
+.singol_card {
+    margin: 10px;
+}
+
+.square {
+    background-color: black;
+    border-radius: 5px;
+    position: relative;
+}
+
+.square span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.square img {
+    width: 100%;
+    opacity: 0.7;
+    border-radius: 5px;
 }
 </style>

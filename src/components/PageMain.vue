@@ -44,9 +44,9 @@ export default {
 
         <!-- first section main -->
         <section class="bg_gray">
-            <button @click="prevImage()">indietro</button>
-            <button @click="nextImage()">avanti</button>
-            <div class="first_slider d-flex">
+            <div class="first_slider d-flex align-items-center">
+                <button class="left_button" @click="prevImage()"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="right_button" @click="nextImage()"><i class="fa-solid fa-chevron-right"></i></button>
                 <div v-for="card in store.cards" class="carde">
                     <small class="name">{{ card.name }}</small>
                     <img :src="this.store.cards[this.store.currentCards].path" alt="">
@@ -260,6 +260,28 @@ export default {
 
 <style scoped>
 /* first section main */
+.left_button {
+    position: absolute;
+    z-index: 2;
+    left: 35px;
+    color: #bf1d2e;
+    background-color: white;
+    border-radius: 50%;
+    border: none;
+    padding: 5px 10px;
+}
+
+
+.right_button {
+    position: absolute;
+    z-index: 2;
+    right: 35px;
+    color: #bf1d2e;
+    background-color: white;
+    border-radius: 50%;
+    border: none;
+    padding: 5px 10px;
+}
 
 .first_slider {
     overflow-x: hidden;

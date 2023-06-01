@@ -106,5 +106,31 @@ export const store = reactive({
             titol: "One piece movie 4",
             subtitol: "Official Trailer | AniTV",
         },
+    ],
+    lastCard: [
+        {
+            titol: "FASHION",
+            path: "public/img/anime-fashion.webp",
+        },
+        {
+            titol: "CULTURE",
+            path: "public/img/success-story.webp",
+        },
+        {
+            titol: "FOOD",
+            path: "public/img/healthy-foods.webp",
+        },
+        {
+            titol: "LIFESTYLE",
+            path: "public/img/visit-france.webp",
+        },
+        {
+            titol: "STORIES",
+            path: "public/img/travel-alone.webp",
+        },
+        {
+            titol: "TRAVEL",
+            path: "public/img/best-places.webp",
+        },
     ]
 })
