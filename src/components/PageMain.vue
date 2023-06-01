@@ -264,7 +264,7 @@ export default {
     position: absolute;
     z-index: 2;
     left: 35px;
-    color: #bf1d2e;
+    color: #00cfc1;
     background-color: white;
     border-radius: 50%;
     border: none;
@@ -276,7 +276,7 @@ export default {
     position: absolute;
     z-index: 2;
     right: 35px;
-    color: #bf1d2e;
+    color: #00cfc1;
     background-color: white;
     border-radius: 50%;
     border: none;
@@ -409,7 +409,7 @@ export default {
 .third_section_button button {
     border: none;
     padding: 1px 15px;
-    background-color: rgb(92, 92, 92);
+    background-color: #333333;
     color: white;
     font-size: 13px;
     border-radius: 5px;

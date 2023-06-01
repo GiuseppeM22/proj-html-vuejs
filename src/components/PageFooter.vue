@@ -49,7 +49,7 @@
 </template>
 <style scoped>
 .bg_red {
-    background-color: #bf1d2e;
+    background-color: #00cfc1;
     padding: 20px;
     -webkit-box-shadow: 0px -4px 2px 1px #585858;
     box-shadow: 0px -4px 2px 1px #585858;
@@ -88,7 +88,7 @@ a {
     margin-top: 10px;
     color: white;
     font-size: 12px;
-    background-color: rgb(72, 72, 72);
+    background-color: #333333;
 }
 
 .footer_image img {

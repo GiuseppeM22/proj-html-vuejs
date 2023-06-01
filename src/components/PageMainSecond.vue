@@ -151,7 +151,7 @@ export default {
 }
 
 .card_paragraph button {
-    background-color: #bf1d2e;
+    background-color: #00cfc1;
     border: none;
     padding: 5px 25px;
     border-radius: 20px;
@@ -161,7 +161,7 @@ export default {
 }
 
 .card_paragraph button:hover {
-    background-color: rgb(72, 72, 72);
+    background-color: #333333;
 }
 
 .name {
@@ -265,7 +265,7 @@ export default {
 }
 
 .playlist_titol {
-    background-color: rgb(71, 71, 71);
+    background-color: #333333;
     padding: 20px;
 }
 
@@ -292,7 +292,7 @@ export default {
     padding: 5px 10px;
     border-radius: 5px;
     color: white;
-    background-color: #bf1d2e;
+    background-color: #00cfc1;
     margin: 10px;
     font-size: 11px;
 }

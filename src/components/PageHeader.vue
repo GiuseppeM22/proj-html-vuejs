@@ -72,7 +72,7 @@ export default {
 /* prima section header */
 
 .bg_red {
-    background-color: #bf1d2e;
+    background-color: #00cfc1;
     width: 100%;
     -webkit-box-shadow: -1px 4px 4px -1px #000000;
     box-shadow: -1px 4px 4px -1px #000000;
@@ -102,7 +102,7 @@ export default {
 }
 
 .social_icons i {
-    color: #bf1d2e;
+    color: #00cfc1;
     padding: 5px;
     border-radius: 50%;
     background-color: white;
@@ -146,11 +146,11 @@ export default {
 }
 
 .menu .link_navbar:hover a {
-    color: #bf1d2e;
+    color: #00cfc1;
 }
 
 .menu .link_navbar:hover i {
-    color: #bf1d2e;
+    color: #00cfc1;
 }
 
 .menu i {
