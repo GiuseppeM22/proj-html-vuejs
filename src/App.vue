@@ -46,9 +46,11 @@ export default {
   <PageHeader :navbar="navbar" />
   <!-- in questo componente andrò ad inserire la parte dell'header comresa con la navbar, genererò dinamicamente la navbar -->
   <PageMain />
-  <!-- in questo componente andro a generare la parte che va dal primo slider all'ultima serie di card prima del footer -->
+  <!-- in questo componente andro a generare la prima parte del main-->
   <PageFooter />
   <!-- in questo componente andrò a generare il footer-->
 </template>
 
 <style scoped></style>
+
+

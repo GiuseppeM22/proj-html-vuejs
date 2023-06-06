@@ -1,5 +1,4 @@
-  <!-- in questo componente andro a generare la parte che va dal primo slider
-     all'ultima serie di card prima del footer -->
+  <!-- in questo componente andro a generare la prima parte del main-->
 
 <script>
 import { store } from '../store'
@@ -18,16 +17,20 @@ export default {
     methods: {
         prevImage() {
             this.store.currentCards--
-            // if (this.store.currentCards < 0)
-            //     this.store.currentCards = 4
+            if (this.store.currentCards < 0)
+                this.store.currentCards = 2
             console.log(this.store.cards[this.store.currentCards].path);
         },
         nextImage() {
             this.store.currentCards++
-            // if (this.store.currentCards > 4)
-            //     this.store.currentCards = 0
+            if (this.store.currentCards > 2)
+                this.store.currentCards = 0
             console.log(this.store.cards[this.store.currentCards].path);
-
+        },
+        visible(i) {
+            if (i <= this.store.currentCards + 3 && i >= this.store.currentCards) {
+                return true
+            }
         }
 
     },
@@ -37,7 +40,7 @@ export default {
 }
 </script>
 
-
+<!-- this.store.cards[this.store.currentCards].path -->
 
 <template>
     <main>
@@ -45,20 +48,24 @@ export default {
         <!-- first section main -->
         <section class="bg_gray">
             <div class="first_slider d-flex align-items-center">
-                <button class="left_button" @click="prevImage()"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="left_button" @keyup.up="prevImage" @keyup.down="prevImage" @click="prevImage()"><i
+                        class="fa-solid fa-chevron-left"></i></button>
                 <button class="right_button" @click="nextImage()"><i class="fa-solid fa-chevron-right"></i></button>
-                <div v-for="card in store.cards" class="carde">
-                    <small class="name">{{ card.name }}</small>
-                    <img :src="this.store.cards[this.store.currentCards].path" alt="">
-                    <div class="card_paragraph">
-                        <strong>
-                            <p class="mt-1 mb-0">{{ card.titol }}</p>
-                        </strong>
-                        <small>
-                            <p class="mb-1">{{ card.date }}</p>
-                        </small>
+                <template v-for="(card, i) in store.cards">
+                    <div v-show="visible(i)" class="carde">
+                        <small class="name">{{ card.name }}</small>
+                        <img :src="card.path" alt="">
+                        <div class="card_paragraph">
+                            <strong>
+                                <p class="mt-1 mb-0">{{ card.titol }}</p>
+                            </strong>
+                            <small>
+                                <p class="mb-1">{{ card.date }}</p>
+                            </small>
+                        </div>
                     </div>
-                </div>
+                </template>
+
             </div>
         </section>
 
@@ -253,6 +260,7 @@ export default {
             </div>
         </section>
         <PageMainSecond />
+        <!-- in questo componente si troverà la seconda parte del main -->
     </main>
 </template>
 
@@ -270,7 +278,6 @@ export default {
     border: none;
     padding: 5px 10px;
 }
-
 
 .right_button {
     position: absolute;

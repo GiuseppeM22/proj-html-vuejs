@@ -1,6 +1,7 @@
 
 import { reactive } from 'vue'
 
+// genero le prime cards del primo carosello
 export const store = reactive({
     currentCards: 0,
     cards: [
@@ -29,21 +30,46 @@ export const store = reactive({
             titol: "Live Ideas You Might Be Anime",
             date: "December 26, 2022"
         },
-        // {
-        //     name: "Food",
-        //     path: "public/img/rice-ball.webp",
-        //     titol: "Live Ideas You Might Be Anime",
-        //     date: "December 26, 2022"
-        // },
-        // {
-        //     name: "culture",
-        //     path: "public/img/success-story.webp",
-        //     titol: "Live Ideas You Might Be Anime",
-        //     date: "December 26, 2022"
-        // },
+        {
+            name: "Food",
+            path: "public/img/rice-ball.webp",
+            titol: "Live Ideas You Might Be Anime",
+            date: "December 26, 2022"
+        },
+        {
+            name: "culture",
+            path: "public/img/success-story.webp",
+            titol: "Live Ideas You Might Be Anime",
+            date: "December 26, 2022"
+        },
 
     ],
+    // genero le cards del secondo carosello
+    currentSlide: 0,
     second_cards: [
+        {
+            name: "Food",
+            path: "public/img/healthy-foods.webp",
+            titol: "The Best Healthy Foods in 2022",
+            date: "December 26, 2022",
+            paragraph: 'lorem ipsum dolor sit amet, ipsum dolor sit amet ipsum dolor sit amet'
+
+        },
+        {
+            name: "Fashion",
+            path: "public/img/winter.webp",
+            titol: "The Best Winter Outfits",
+            date: "December 26, 2022",
+            paragraph: 'lorem ipsum dolor sit amet, ipsum dolor sit amet ipsum dolor sit amet'
+
+        },
+        {
+            name: "Fashion",
+            path: "public/img/photographers-mistakes.webp",
+            titol: "Beginner Photographer's Mistakes",
+            date: "December 26, 2022",
+            paragraph: 'lorem ipsum dolor sit amet, ipsum dolor sit amet ipsum dolor sit amet'
+        },
         {
             name: "Food",
             path: "public/img/healthy-foods.webp",
@@ -69,6 +95,8 @@ export const store = reactive({
         },
 
     ],
+
+    // genero le cards di youtube nel componente page main second
     youtube: [
         {
             id: "1",
@@ -107,6 +135,8 @@ export const store = reactive({
             subtitol: "Official Trailer | AniTV",
         },
     ],
+
+    // genero le ultime cards nel page main second
     lastCard: [
         {
             titol: "FASHION",

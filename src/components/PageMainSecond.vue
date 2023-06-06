@@ -9,6 +9,23 @@ export default {
 
         }
     },
+    methods: {
+        prev() {
+            this.store.currentSlide--
+            if (this.store.currentSlide < 0)
+                this.store.currentSlide = 3
+        },
+        next() {
+            this.store.currentSlide++
+            if (this.store.currentSlide > 3)
+                this.store.currentSlide = 0
+        },
+        visible(i) {
+            if (i <= this.store.currentSlide + 2 && i >= this.store.currentSlide) {
+                return true
+            }
+        }
+    }
 }
 </script>
 <template>
@@ -24,31 +41,34 @@ export default {
         <div class="featured_titol d-flex justify-content-between boxed align-items-center">
             <h5>FEATURED POSTS</h5>
             <div class="featured_button">
-                <button><i class="fa-solid fa-chevron-left"></i></button>
-                <button><i class="fa-solid fa-chevron-right"></i></button>
+                <button @click="prev()"><i class="fa-solid fa-chevron-left"></i></button>
+                <button @click="next()"><i class="fa-solid fa-chevron-right"></i></button>
             </div>
         </div>
     </section>
 
     <section class="boxed">
         <div class="first_slider d-flex">
-            <div v-for="card in store.second_cards" class="carde">
-                <small class="name">{{ card.name }}</small>
-                <small class="name_2">{{ card.name }}</small>
-                <img :src="card.path" alt="">
-                <div class="card_paragraph p-2">
-                    <strong>
-                        <p class="mt-1 mb-0">{{ card.titol }}</p>
-                    </strong>
-                    <small>
-                        <p class="mb-1">{{ card.date }}</p>
-                    </small>
-                    <small>
-                        <p class="mb-1 text-secondary">{{ card.paragraph }}</p>
-                    </small>
-                    <button>Read More</button>
+            <template v-for="(card, i) in store.second_cards">
+                <div v-show="visible(i)" class="carde">
+                    <small class="name">{{ card.name }}</small>
+                    <small class="name_2">{{ card.name }}</small>
+                    <img :src="card.path" alt="">
+                    <div class="card_paragraph p-2">
+                        <strong>
+                            <p class="mt-1 mb-0">{{ card.titol }}</p>
+                        </strong>
+                        <small>
+                            <p class="mb-1">{{ card.date }}</p>
+                        </small>
+                        <small>
+                            <p class="mb-1 text-secondary">{{ card.paragraph }}</p>
+                        </small>
+                        <button>Read More</button>
+                    </div>
                 </div>
-            </div>
+            </template>
+
         </div>
     </section>
 
